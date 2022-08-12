@@ -10,7 +10,7 @@ Project for 42_Roma
 ## Table of contents
 
 - [MiniLibX](#minilibx)
-    - [Some Useful info & documentation about MiniLibX:](#some-useful-info-&-documentation-about-minilibx:)
+    - [Some Useful info & documentation about MiniLibX:](some-useful-info--documentation-about-minilibx)
 - [Description](#description)
     - [Assets](#assets)
 
@@ -27,7 +27,9 @@ This library was developed internally and includes basic necessary tools to open
 
 - [MiniLibX - 42 Docs](https://harm-smits.github.io/42docs/libs/minilibx);
 
-### Assets
+### Description
+
+#### Assets
 
 The game use sprites, tilesets and other assets provided by the [NINJA ADVENTURE](https://pixel-boy.itch.io/ninja-adventure-asset-pack) Asset pack:
 
@@ -35,4 +37,4 @@ The game use sprites, tilesets and other assets provided by the [NINJA ADVENTURE
 
 You can find the original Asset pack [here](/assets/NinjaAdventure.zip)
 
-If you like this Asset Pack, feel free to support the creator on Patreon: https://www.patreon.com/pixelarchipel
+If you like this Asset Pack, feel free to support the creator on *Patreon*: https://www.patreon.com/pixelarchipel
