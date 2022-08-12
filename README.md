@@ -15,3 +15,7 @@ This library was developed internally and includes basic necessary tools to open
 - See the github repository for:
   - Requirements;
   - [Official MAN PAGES](https://github.com/42Paris/minilibx-linux/tree/master/man/man3)
+
+##### Some Useful info & documentation about MiniLibX:
+
+- [MiniLibX - 42 Docs](https://harm-smits.github.io/42docs/libs/minilibx);
