@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 11:18:37 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/13 14:29:33 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/13 17:07:13 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct s_check_map
 	int		collectible;
 	int		exit;
 	int		pos;
-	int		enemy;
 	bool	correct;
 }			t_check_map;
 
@@ -88,9 +87,16 @@ typedef struct s_map
 	bool		can_staff_move;
 }			t_map;
 
-/*	checker	*/
+/*	checker.c	*/
 void	is_valid(int argc, char **argv, t_map *map);
-/*	errors	*/
+/*	checker_utils.c	*/
+void	initial_value(t_map *map);
+void	fill_checker(t_map *map, char c);
+/*	str_utils.c	*/
+char	*get_next_line(int fd);
+/*	map_loader.c	*/
+void	load_map(t_map *map, char *mapf);
+/*	errors.c	*/
 void	print_bf_exit_error(char *s, int err);
-
+void	print_exit_error(char *s, int err, t_map *map);
 #endif

@@ -6,14 +6,38 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 12:41:14 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/13 14:42:18 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/13 17:07:16 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	free_matrix(char **matrix)
+{
+	int	i;
+
+	i = 0;
+	if (matrix)
+	{
+		while (matrix[i])
+		{
+			free(matrix[i]);
+			i++;
+		}
+		free(matrix);
+	}
+}
 
 void	print_bf_exit_error(char *s, int err)
 {
 	perror(s);
 	exit(err);
 }
+
+void	print_exit_error(char *s, int err, t_map *map)
+{
+	free_matrix(map->map);
+	perror(s);
+	exit(err);
+}
+
