@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 11:18:37 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/13 18:10:33 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/13 21:20:30 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,9 @@ typedef struct s_win
 	void	*win;
 	char	*floor;
 	char	*exit;
-	char	*exit2;
 	char	*wall;
-	char	*coin;
-	char	*play1;
-	char	*play2;
-	char	*play3;
-	char	*play4;
+	char	*collect;
+	char	*play;
 }			t_win;
 
 typedef struct s_img

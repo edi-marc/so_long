@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 18:06:54 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/13 18:34:42 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/13 21:20:34 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,11 @@ void	render_images(t_map *map)
 	t_img	img;
 
 	map->win.floor = "img/floor.xpm";
-
 	map->win.exit = "img/exit.xpm";
-	map->win.exit2 = "img/exit2.xpm";
 	map->win.wall = "img/wall.xpm";
-	map->win.play1 = "img/player/player1.xpm";
-	map->win.play2 = "img/player/player2.xpm";
-	map->win.play3 = "img/player/player3.xpm";
-	map->win.play4 = "img/player/player4.xpm";
-	map->win.coin = "img/animation/coins0.xpm";
+	map->win.play = "img/player.xpm";
+	
+	map->win.collect = "img/collect.xpm";
 	render_staff(map);
 	img.floo = mlx_xpm_file_to_image(map->win.mlx, map->win.floor, &x, &y);
 	img.exit = mlx_xpm_file_to_image(map->win.mlx, map->win.exit, &x, &y);
