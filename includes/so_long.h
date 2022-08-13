@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 11:18:37 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/13 21:20:30 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/14 00:27:20 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,11 @@ typedef struct s_win
 
 typedef struct s_img
 {
-	void	*enem;
-	void	*spaw;
 	void	*floo;
 	void	*exit;
-	void	*exit2;
 	void	*wall;
-	void	*coin;
-	void	*play1;
-	void	*play2;
-	void	*play3;
-	void	*play4;
+	void	*collect;
+	void	*play;
 }			t_img;
 
 typedef enum e_game
@@ -98,4 +92,6 @@ void	render_images(t_map *map);
 /*	errors.c	*/
 void	print_bf_exit_error(char *s, int err);
 void	print_exit_error(char *s, int err, t_map *map);
+/*	img_map_fill.c	*/
+void	fill_windows(t_map *map);
 #endif
