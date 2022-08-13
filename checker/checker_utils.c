@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:32:05 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/13 16:23:22 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/13 18:12:23 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,13 @@ void	fill_checker(t_map *map, char c)
 		map->check.space++;
 	else if (c != '\n' && c != '\0')
 		map->check.correct = false;
+}
+
+void	init_win(t_map *map)
+{
+	render_images(map);
+	map->x = 1;
+	map->y = 1;
+	map->moves = 0;
+	map->delay = 0;
 }
