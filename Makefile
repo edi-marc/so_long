@@ -6,7 +6,7 @@
 #    By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/14 11:27:35 by edi-marc          #+#    #+#              #
-#    Updated: 2022/08/14 13:03:29 by edi-marc         ###   ########.fr        #
+#    Updated: 2022/08/14 13:54:44 by edi-marc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,44 +20,44 @@ P1		=	./checker/
 P2		=	./errors/
 P3		=	./img_utils/
 P4		=	./map_utils/
-P5		=	./utils/
 
-SRC		=	so_long.c							\
+SO_SRCS	=	so_long.c							\
 			$(P1)checker_utils.c				\
 			$(P1)checker.c						\
 			$(P2)errors.c						\
-			$(P3)img_util.c						\
 			$(P3)img_map_fill.c					\
-			$(P4)map_end_game.c					\
-			$(P4)map_key_helper.c				\
-			$(P4)map_key_manager.c				\
 			$(P4)map_loader.c					\
 			$(P4)map_render.c					\
-			$(P5)util_int.c						\
+			$(U_SRCS)							\
 
-OBJ		=	$(SRC:.c=.o)
+U_SRCS	=	$(addprefix utils/, $(SRCS))
 
-INCLUDE	=	includes
+SRCS	=	ft_bzero.c ft_calloc.c ft_memset.c ft_strjoin.c ft_strlcat.c \
+			ft_strlen.c ft_strncmp.c ft_strrchr.c str_utils.c
 
-MLX		=	minilibx
+OBJ		=	$(SO_SRC:.c=.o)
+
+INCLUDE	=	includes/
+
+MLX_DIR	=	minilibx/
+
+MLX		=	$(MLX_DIR)mlx.a
 
 RM		=	/bin/rm -f
 
 .c.o:
-		$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $(<:.c=.o)
+		$(CC) $(CFLAGS) -I$(INCLUDE) -I$(MLX_DIR) -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit -c $< -o $(<:.c=.o)
 
 all:	$(NAME)
 
-$(NAME):	$(OBJ)
+$(NAME):	$(OBJ) 
 
 norme:
 		@norminette $(SL_SRC)
 
 clean:
-			make clean -C minilibx
-			rm -f *.o
-			rm -f ./*/*.o
-			@echo "\033[33mSO_LONG>> Deleted \".o\" files\033[0m"
+			make clean -C $(MLX_DIR)
+			$(RM) $(OBJS) 
 
 fclean:		clean
 			rm -rf $(NAME)

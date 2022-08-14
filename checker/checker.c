@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 12:38:51 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/14 11:19:16 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/14 13:21:02 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static bool	ft_check_map_name(char *filename)
 
 	dot = ft_strrchr(filename, '.');
 	if (!dot || dot == filename || ft_strlen(dot) != 4
-		|| ft_strncmp(dot, VALID_EXT) != 0)
+		|| ft_strncmp(dot, VALID_EXT, 4) != 0)
 		return (false);
 	return (true);
 }

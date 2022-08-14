@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 11:17:08 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/14 11:20:34 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/14 13:05:17 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 {
 	t_map	m;
 
-	is_valid(argc, argv, &m)i;
+	is_valid(argc, argv, &m);
 	if (!m.win.mlx)
 		print_exit_error(MALLOC_ERR_TXT, MALLOC_ERR, &m);
 	m.win.win = mlx_new_window(m.win.mlx, m.col * 64, m.row * 64, "So long");

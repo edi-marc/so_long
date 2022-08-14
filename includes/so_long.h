@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 11:18:37 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/14 11:19:19 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/14 13:29:57 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 # define SO_LONG_H
 
 # include <stdio.h>
+# include <fcntl.h>
+# include <stdbool.h>
+# include "errors.h"
+# include "libft.h"
+# include "../minilibx/mlx.h"
 
 # define VALID_EXT ".ber"
 

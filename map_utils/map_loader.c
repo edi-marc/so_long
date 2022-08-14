@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:42:46 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/13 17:02:47 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/14 13:30:30 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,5 @@ void	load_map(t_map *map, char *mapf)
 	}
 	map->map[++i] = 0;
 	if (!map->map[0])
-		print_error(NVALID_MAP_TXT, NVALID_MAP, map);
+		print_exit_error(NVALID_MAP_TXT, NVALID_MAP, map);
 }
