@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 11:18:37 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/14 13:29:57 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/14 18:12:07 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,29 @@
 # include "../minilibx/mlx.h"
 
 # define VALID_EXT ".ber"
+
+typedef enum e_keys
+{
+	ESC = 53,
+	W = 13,
+	A = 0,
+	S = 1,
+	D = 2,
+	K_UP = 126,
+	K_DOWN = 125,
+	K_LEFT = 123,
+	K_RIGHT = 124,
+	ENTER_1 = 36,
+	ENTER_2 = 76,
+}	t_keys;
+
+typedef enum e_dir
+{
+	UP,
+	DOWN,
+	LEFT,
+	RIGHT,
+}	t_dir;
 
 typedef struct s_check_map
 {
@@ -99,6 +122,17 @@ void	render_images(t_map *map);
 /*	errors.c	*/
 void	print_bf_exit_error(char *s, int err);
 void	print_exit_error(char *s, int err, t_map *map);
+void	free_matrix(char**	matrix);
 /*	img_map_fill.c	*/
 void	fill_windows(t_map *map);
+void    set_image_1(t_map *m, int i, int j);
+/*	map_key_manager.c	*/
+int		command(int keycode, t_map *map);
+/*	map_key_helper.c	*/
+void	move_helper(t_map *m, int x, int y);
+/*	map_end_game.c	*/
+int		close_windows(t_map *map);
+void	final_exit(t_map *map);
+void	esc(t_map *m);
+void	end_game(t_map *map, bool win);
 #endif

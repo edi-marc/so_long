@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 00:21:07 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/14 10:53:35 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/14 18:08:02 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	set_image_2(t_map *m, int i, int j)
 		mlx_put_image_to_window(v.mlx, v.win, f.wall, j * 64, i * 64);
 }
 
-static void	set_image_1(t_map *m, int i, int j)
+void	set_image_1(t_map *m, int i, int j)
 {
 	t_img	f;
 	t_win	v;

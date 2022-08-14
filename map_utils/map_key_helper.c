@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   map_key_helper.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/13 11:17:08 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/14 18:17:23 by edi-marc         ###   ########.fr       */
+/*   Created: 2022/08/14 17:57:41 by edi-marc          #+#    #+#             */
+/*   Updated: 2022/08/14 18:11:51 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-**	64 is the tile size (64 x 64)
-*/
-
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+void	move_helper(t_map *m, int x, int y)
 {
-	t_map	m;
+	t_img	f;
+	int		tx;
+	int		ty;
 
-	is_valid(argc, argv, &m);
-	m.win.mlx = mlx_init();
-	if (!m.win.mlx)
-		print_exit_error(MALLOC_ERR_TXT, MALLOC_ERR, &m);
-	m.win.win = mlx_new_window(m.win.mlx, m.col * 64, m.row * 64, "So long");
-	init_win(&m);
-	fill_windows(&m);
-	mlx_hook(m.win.win, 2, 1L << 0, command, &m);
-	mlx_loop(m.win.mlx);
+	tx = m->x * 64;
+	ty = m->y * 64;
+	f = m->img;
+	mlx_put_image_to_window(m->win.mlx, m->win.win, f.floo, tx, ty);
+	m->map[m->y][m->x] = '0';
+	m->y = y;
+	m->x = x;
+	tx = m->x * 64;
+	ty = m->y * 64;
+	mlx_put_image_to_window(m->win.mlx, m->win.win, f.play, tx, ty);
+	m->moves++;
+	//print_moves(m);
 }

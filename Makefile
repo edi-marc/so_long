@@ -6,7 +6,7 @@
 #    By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/14 11:27:35 by edi-marc          #+#    #+#              #
-#    Updated: 2022/08/14 14:25:19 by edi-marc         ###   ########.fr        #
+#    Updated: 2022/08/14 17:56:39 by edi-marc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,9 @@ SO_SRCS	=	so_long.c							\
 			$(D3)img_map_fill.c					\
 			$(D4)map_loader.c					\
 			$(D4)map_render.c					\
+			$(D4)map_key_manager.c				\
+			$(D4)map_key_helper.c				\
+			$(D4)map_end_game.c					\
 			$(U_SRCS)							\
 
 U_SRCS	=	$(addprefix $(D5), $(SRCS))

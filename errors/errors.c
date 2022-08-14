@@ -6,13 +6,13 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 12:41:14 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/14 11:23:33 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/14 17:43:32 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	free_matrix(char **matrix)
+void	free_matrix(char **matrix)
 {
 	int	i;
 
