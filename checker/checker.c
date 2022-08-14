@@ -6,11 +6,33 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 12:38:51 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/13 17:06:55 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/14 11:19:16 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	is_closed(t_map *map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map->map[i])
+	{
+		j = 0;
+		while (map->map[i][j])
+		{
+			if ((i == 0 || i == map->row - 1)
+				&& map->map[i][j] != '1')
+				print_exit_error(NO_BORDERS_TXT, NVALID_MAP, map);
+			if ((j == 0 || j == map->col - 1) && map->map[i][j] != '1')
+				print_exit_error(NO_BORDERS_TXT, NVALID_MAP, map);
+			j++;
+		}
+		i++;
+	}
+}
 
 static bool	ft_check_map_name(char *filename)
 {

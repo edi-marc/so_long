@@ -6,9 +6,33 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 15:32:05 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/13 18:12:23 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/14 11:23:12 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+void	check_map(t_map *map)
+{
+	int	col;
+	int	i;
+
+	i = 0;
+	while (map->map[i])
+	{
+		col = 0;
+		while (map->map[i][col])
+			col++;
+		if (i == 0)
+			map->col = col;
+		if (map->col != col)
+			print_exit_error(NVALID_MAP_TXT, NVALID_MAP, map);
+		if ((i != 0 && i != map->row - 1) && map->col != col)
+			print_exit_error(NVALID_MAP_TXT, NVALID_MAP, map);
+		i++;
+	}
+	is_closed(map);
+	if (!map->check.correct)
+		print_exit_error(NVALID_MAP_TXT, NVALID_MAP, map);
+}
 
 void	initial_value(t_map *map)
 {

@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 12:41:14 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/13 17:07:16 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/08/14 11:23:33 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,3 @@ void	print_exit_error(char *s, int err, t_map *map)
 	perror(s);
 	exit(err);
 }
-
