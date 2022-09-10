@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 11:18:37 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/14 18:12:07 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/09/10 14:59:57 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,10 +122,10 @@ void	render_images(t_map *map);
 /*	errors.c	*/
 void	print_bf_exit_error(char *s, int err);
 void	print_exit_error(char *s, int err, t_map *map);
-void	free_matrix(char**	matrix);
+void	free_matrix(char **matrix);
 /*	img_map_fill.c	*/
 void	fill_windows(t_map *map);
-void    set_image_1(t_map *m, int i, int j);
+void	set_image_1(t_map *m, int i, int j);
 /*	map_key_manager.c	*/
 int		command(int keycode, t_map *map);
 /*	map_key_helper.c	*/
