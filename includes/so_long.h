@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 11:18:37 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/09/10 14:59:57 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/09/25 16:22:06 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,9 +130,10 @@ void	set_image_1(t_map *m, int i, int j);
 int		command(int keycode, t_map *map);
 /*	map_key_helper.c	*/
 void	move_helper(t_map *m, int x, int y);
+void	print_moves(t_map *map);
 /*	map_end_game.c	*/
 int		close_windows(t_map *map);
 void	final_exit(t_map *map);
 void	esc(t_map *m);
-void	end_game(t_map *map, bool win);
+void	end_game(t_map *map);
 #endif

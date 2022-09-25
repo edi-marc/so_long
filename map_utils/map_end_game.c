@@ -6,7 +6,7 @@
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 17:39:42 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/14 18:06:23 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/09/25 16:20:02 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ void	final_exit(t_map *map)
 {
 	free_matrix(map->map);
 	exit(0);
+}
+
+void	end_game(t_map *map)
+{
+	m->moves++;
+	print_moves(m);
 }
 
 /*

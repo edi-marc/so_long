@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_key_manager.c                                  :+:      :+:    :+:   */
+/*   map:w_key_manager.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edi-marc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 17:29:40 by edi-marc          #+#    #+#             */
-/*   Updated: 2022/08/14 18:15:21 by edi-marc         ###   ########.fr       */
+/*   Updated: 2022/09/25 16:57:33 by edi-marc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	move_down(t_map *m)
 	}
 	if (m->map[m->y + 1][m->x] == 'E' && !m->check.collectible)
 	{
-		//end_game(m, true);
+		end_game(m);
 		return ;
 	}
 	else if (m->map[m->y + 1][m->x] == 'E' && m->check.collectible)
@@ -44,7 +44,7 @@ static void	move_left(t_map *m)
 	}
 	if (m->map[m->y][m->x - 1] == 'E' && !m->check.collectible)
 	{
-		//end_game(m, true);
+		end_game(m);
 		return ;
 	}
 	else if (m->map[m->y][m->x - 1] == 'E' && m->check.collectible)
@@ -64,7 +64,7 @@ static void	move_right(t_map *m)
 	}
 	if (m->map[m->y][m->x + 1] == 'E' && !m->check.collectible)
 	{
-		//end_game(m, true);
+		end_game(m);
 		return ;
 	}
 	else if (m->map[m->y][m->x + 1] == 'E' && m->check.collectible)
@@ -84,7 +84,7 @@ static void	move_up(t_map *m)
 	}
 	if (m->map[m->y - 1][m->x] == 'E' && !m->check.collectible)
 	{
-		//end_game(m, true);
+		end_game(m);
 		return ;
 	}
 	else if (m->map[m->y - 1][m->x] == 'E' && m->check.collectible)
@@ -108,7 +108,6 @@ int	command(int key, t_map *map)
 	else if (key == D || key == K_RIGHT)
 		move_right(map);
 	else if ((key == ENTER_1 || key == ENTER_2) && map->status != IN_GAME)
-		//esc(map);
-		;
+	//	esc(map);
 	return (0);
 }
